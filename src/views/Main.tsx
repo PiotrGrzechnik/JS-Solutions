@@ -3,12 +3,13 @@ import styled from "styled-components";
 import {Layout, Menu} from "antd";
 import {CodepenOutlined, GlobalOutlined, SecurityScanOutlined} from "@ant-design/icons";
 import {createFromIconfontCN} from "@ant-design/icons";
+import ContentSolutions from "./ContentSolutions";
 
 const IconFont = createFromIconfontCN({
     scriptUrl: ["//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js"]
 });
 const {SubMenu} = Menu;
-const {Header, Content, Sider} = Layout;
+const {Header, Sider} = Layout;
 
 const LayoutStyled = styled(Layout)`
     min-height: 100vh;
@@ -23,11 +24,6 @@ const MenuStyled = styled(Menu)`
 const LayoutContentStyled = styled(Layout)`
     padding: 0 24px 24px;
 `;
-const ContentStyled = styled(Content)`
-    padding: 24px;
-    margin: 0;
-    min-height: 280px;
-`;
 
 const Main: React.FC = () => (
     <LayoutStyled>
@@ -36,7 +32,12 @@ const Main: React.FC = () => (
         </Header>
         <Layout>
             <Sider width={200} className="site-layout-background">
-                <MenuStyled mode="inline" defaultSelectedKeys={["1"]} defaultOpenKeys={["sub1"]}>
+                <MenuStyled
+                    theme="light"
+                    mode="inline"
+                    defaultSelectedKeys={["1"]}
+                    defaultOpenKeys={["javascript"]}
+                >
                     <SubMenu
                         key="javascript"
                         icon={<IconFont type="icon-javascript" />}
@@ -68,7 +69,7 @@ const Main: React.FC = () => (
                 </MenuStyled>
             </Sider>
             <LayoutContentStyled>
-                <ContentStyled className="site-layout-background">Content</ContentStyled>
+                <ContentSolutions />
             </LayoutContentStyled>
         </Layout>
     </LayoutStyled>
