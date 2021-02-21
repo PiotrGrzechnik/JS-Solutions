@@ -1,29 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 import {List, Tag} from "antd";
+import {getTagColor} from "src/helpers/getTagColor";
+import {JSType} from "src/types";
 
 const data = [
     {
         title: "Map array",
-        tags: ["array"]
+        tags: [JSType.ARRAY]
     },
     {
         title: "Compare two arrays",
-        tags: ["array"]
+        tags: [JSType.ARRAY, JSType.NULL, JSType.UNDEFINED]
     },
     {
         title: "Array of string",
-        tags: ["array", "string"]
+        tags: [JSType.ARRAY, JSType.STRING, JSType.BOOLEAN]
     },
     {
         title: "Array of objects",
-        tags: ["array", "object"]
+        tags: [JSType.ARRAY, JSType.OBJECT, JSType.NUMBER, JSType.UNDEFINED]
     }
 ];
 
 const TagsContainer = styled.div`
     padding-left: 20px;
-    filter: opacity(0.7);
+    filter: opacity(0.5);
 `;
 
 interface ListSolutionsProps {
@@ -47,7 +49,7 @@ const ListSolutions: React.FC<ListSolutionsProps> = ({setDisplayedItem}) => {
                             description={
                                 <TagsContainer>
                                     {item.tags?.map((tag) => (
-                                        <Tag key={tag} color="cyan">
+                                        <Tag key={tag} color={getTagColor(tag)}>
                                             {tag}
                                         </Tag>
                                     ))}
