@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import {Layout} from "antd";
 
-import ListSolutions from "./ListSolutions";
+import SolutionsList from "./SolutionsList";
 import Solution from "./Solution";
+import {ListPath} from "src/types";
 
 const {Content} = Layout;
 
@@ -13,7 +14,11 @@ const ContentStyled = styled(Content)`
     min-height: 280px;
 `;
 
-const ContentSolutions: React.FC = () => {
+interface ContentSolutionsProps {
+    listPath: ListPath;
+}
+
+const ContentSolutions: React.FC<ContentSolutionsProps> = ({listPath}) => {
     const [displayedItem, setDisplayedItem] = useState(null);
 
     return (
@@ -21,7 +26,7 @@ const ContentSolutions: React.FC = () => {
             {displayedItem ? (
                 <Solution setDisplayedItem={setDisplayedItem} />
             ) : (
-                <ListSolutions setDisplayedItem={setDisplayedItem} />
+                <SolutionsList listPath={listPath} setDisplayedItem={setDisplayedItem} />
             )}
         </ContentStyled>
     );

@@ -1,12 +1,12 @@
 import {Category} from "./category";
-import {Subcategories} from "./subcategory";
+import {Subcategory} from "./subcategory";
 
-export interface SolutionType {
+export interface Solution {
     category: Category;
-    subcategory: Subcategories;
+    subcategory: Subcategory;
     title: string;
     description: string;
     code: string;
     example: string;
-    tags: Subcategories[];
+    tags: Subcategory[];
 }

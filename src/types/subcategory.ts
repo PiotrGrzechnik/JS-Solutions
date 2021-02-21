@@ -1,3 +1,11 @@
-import {JSType} from "./javascript";
+export enum JSType {
+    OBJECT = "object",
+    ARRAY = "array",
+    STRING = "string",
+    NUMBER = "number",
+    BOOLEAN = "boolean",
+    NULL = "null",
+    UNDEFINED = "undefined"
+}
 
-export type Subcategories = JSType;
+export type Subcategory = JSType;

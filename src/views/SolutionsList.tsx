@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import {List, Tag} from "antd";
 import {getTagColor} from "src/helpers/getTagColor";
-import {JSType} from "src/types";
+import {JSType} from "src/types/subcategory";
+import {ListPath} from "src/types";
+import {getSolutionsList} from "src/helpers/getSolutionsList";
 
 const data = [
     {
@@ -28,11 +30,14 @@ const TagsContainer = styled.div`
     filter: opacity(0.5);
 `;
 
-interface ListSolutionsProps {
+interface SolutionsListProps {
+    listPath: ListPath;
     setDisplayedItem: (item) => void;
 }
 
-const ListSolutions: React.FC<ListSolutionsProps> = ({setDisplayedItem}) => {
+const SolutionsList: React.FC<SolutionsListProps> = ({listPath, setDisplayedItem}) => {
+    getSolutionsList(listPath);
+
     return (
         <div>
             <List
@@ -63,4 +68,4 @@ const ListSolutions: React.FC<ListSolutionsProps> = ({setDisplayedItem}) => {
     );
 };
 
-export default ListSolutions;
+export default SolutionsList;
