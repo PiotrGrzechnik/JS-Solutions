@@ -1,30 +1,13 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {List, Tag} from "antd";
-import {getTagColor} from "src/helpers/getTagColor";
-import {JSType} from "src/types/subcategory";
-import {ListPath} from "src/types";
-import {getSolutionsList} from "src/helpers/getSolutionsList";
+import {ListPath, Solution} from "src/types";
+import {getTagColor} from "src/utils/getTagColor";
+import {getSolutionsList} from "src/utils/getSolutionsList";
 
-const data = [
-    {
-        title: "Map array",
-        tags: [JSType.ARRAY]
-    },
-    {
-        title: "Compare two arrays",
-        tags: [JSType.ARRAY, JSType.NULL, JSType.UNDEFINED]
-    },
-    {
-        title: "Array of string",
-        tags: [JSType.ARRAY, JSType.STRING, JSType.BOOLEAN]
-    },
-    {
-        title: "Array of objects",
-        tags: [JSType.ARRAY, JSType.OBJECT, JSType.NUMBER, JSType.UNDEFINED]
-    }
-];
-
+const ItemTitle = styled.div`
+    cursor: pointer;
+`;
 const TagsContainer = styled.div`
     padding-left: 20px;
     filter: opacity(0.5);
@@ -36,20 +19,24 @@ interface SolutionsListProps {
 }
 
 const SolutionsList: React.FC<SolutionsListProps> = ({listPath, setDisplayedItem}) => {
-    getSolutionsList(listPath);
+    const [list, setList] = useState<Solution[]>([]);
+
+    useEffect(() => {
+        getSolutionsList(listPath).then((data) => setList(data.solutions));
+    }, [listPath]);
 
     return (
         <div>
             <List
                 itemLayout="horizontal"
-                dataSource={data}
+                dataSource={list}
                 renderItem={(item, i) => (
                     <List.Item>
                         <List.Item.Meta
                             title={
-                                <div onClick={() => setDisplayedItem(item)}>
+                                <ItemTitle onClick={() => setDisplayedItem(item)}>
                                     <span>{++i}</span> - {item.title}
-                                </div>
+                                </ItemTitle>
                             }
                             description={
                                 <TagsContainer>

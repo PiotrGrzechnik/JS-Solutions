@@ -27,7 +27,7 @@ const Main: React.FC = () => {
     return (
         <LayoutStyled>
             <Header className="header">
-                <HeaderTitle>JSSolutions</HeaderTitle>
+                <HeaderTitle>JS Solutions</HeaderTitle>
             </Header>
             <Layout>
                 <SideMenu setListPath={setListSolutionsPath} />

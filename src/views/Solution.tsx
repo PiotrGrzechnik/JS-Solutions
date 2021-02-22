@@ -1,20 +1,28 @@
-import {Button} from "antd";
+import {Button, Card} from "antd";
 import React from "react";
-import {UpOutlined} from "@ant-design/icons";
+import {OrderedListOutlined} from "@ant-design/icons";
+import {Solution} from "src/types";
 
 interface SolutionsProps {
+    item: Solution;
     setDisplayedItem: (item) => void;
 }
 
-const Solution: React.FC<SolutionsProps> = ({setDisplayedItem}) => {
+const Solution: React.FC<SolutionsProps> = ({item, setDisplayedItem}) => {
     return (
         <div>
             <div>
-                <Button type="dashed" icon={<UpOutlined />} onClick={() => setDisplayedItem(null)}>
+                <Button
+                    type="text"
+                    icon={<OrderedListOutlined />}
+                    onClick={() => setDisplayedItem(null)}
+                >
                     List
                 </Button>
             </div>
-            Solution
+            <Card title={item.title}>
+                <p>{item.code}</p>
+            </Card>
         </div>
     );
 };

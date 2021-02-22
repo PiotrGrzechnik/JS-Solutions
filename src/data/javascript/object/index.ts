@@ -1,6 +1,6 @@
 import {Category, JSType, Solution} from "src/types";
 
-export const objectList: Solution[] = [
+export const solutions: Solution[] = [
     {
         category: Category.JAVASCRIPT,
         subcategory: JSType.OBJECT,

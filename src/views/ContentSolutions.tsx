@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Layout} from "antd";
 
@@ -21,10 +21,14 @@ interface ContentSolutionsProps {
 const ContentSolutions: React.FC<ContentSolutionsProps> = ({listPath}) => {
     const [displayedItem, setDisplayedItem] = useState(null);
 
+    useEffect(() => {
+        setDisplayedItem(null);
+    }, [listPath]);
+
     return (
         <ContentStyled className="site-layout-background">
             {displayedItem ? (
-                <Solution setDisplayedItem={setDisplayedItem} />
+                <Solution item={displayedItem} setDisplayedItem={setDisplayedItem} />
             ) : (
                 <SolutionsList listPath={listPath} setDisplayedItem={setDisplayedItem} />
             )}
