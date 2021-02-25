@@ -9,10 +9,13 @@ export const basic: Solution[] = [
     codes: [
     {
     key: '1',
+    title: 'filter',
     code:
     `
     const removeDuplicatesFromArray = (arr) => arr.filter((item, index) => arr.indexOf(item) === index)
-
+    `,
+    example:
+    `
     const arr = ['one','two','one']
 
     removeDuplicatesFromArray(arr)
@@ -21,7 +24,12 @@ export const basic: Solution[] = [
     `
     },{
     key: '2',
+    title: 'Set',
     code:
+    `
+    const removeDuplicatesFromArray = [...new Set(arr)]
+    `,
+    example:
     `
     const arr = ['one','two','one']
 

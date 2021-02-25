@@ -4,6 +4,8 @@ import {Subcategory} from "./subcategory";
 export interface SolutionCode {
     key: string;
     code: string;
+    title?: string;
+    example?: string;
 }
 
 export interface Solution {

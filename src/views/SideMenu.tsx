@@ -1,17 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import {Layout, Menu} from "antd";
-import {
-    CodepenOutlined,
-    GlobalOutlined,
-    SecurityScanOutlined,
-    createFromIconfontCN
-} from "@ant-design/icons";
 import {Category, JSType, ListPath} from "src/types";
+import {menuSections} from "src/data/sideMenu";
 
-const IconFont = createFromIconfontCN({
-    scriptUrl: ["//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js"]
-});
 const {SubMenu} = Menu;
 const {Sider} = Layout;
 
@@ -40,19 +32,13 @@ const SideMenu: React.FC<SideMenuProps> = ({setListPath}) => {
                 defaultOpenKeys={[Category.JAVASCRIPT]}
                 onClick={onSubcategoryClick}
             >
-                <SubMenu
-                    key={Category.JAVASCRIPT}
-                    icon={<IconFont type="icon-javascript" />}
-                    title="javascript"
-                >
-                    <Menu.Item key={JSType.ARRAY}>{JSType.ARRAY}</Menu.Item>
-                    <Menu.Item key={JSType.OBJECT}>{JSType.OBJECT}</Menu.Item>
-                    <Menu.Item key={JSType.STRING}>{JSType.STRING}</Menu.Item>
-                    <Menu.Item key={JSType.NUMBER}>{JSType.NUMBER}</Menu.Item>
-                </SubMenu>
-                <SubMenu key="algorithms" icon={<CodepenOutlined />} title="algorithms"></SubMenu>
-                <SubMenu key="react" icon={<GlobalOutlined />} title="react"></SubMenu>
-                <SubMenu key="tests" icon={<SecurityScanOutlined />} title="tests"></SubMenu>
+                {menuSections.map(({category, icon, subcategories}) => (
+                    <SubMenu key={category} icon={icon} title={category}>
+                        {subcategories.map((subcategory) => (
+                            <Menu.Item key={subcategory}>{subcategory}</Menu.Item>
+                        ))}
+                    </SubMenu>
+                ))}
             </MenuStyled>
         </Sider>
     );

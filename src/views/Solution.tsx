@@ -3,8 +3,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import {OrderedListOutlined} from "@ant-design/icons";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import {irBlack} from "react-syntax-highlighter/dist/esm/styles/hljs";
-
+import {atelierForestDark} from "react-syntax-highlighter/dist/esm/styles/hljs";
 import {Solution} from "src/types";
 
 const {Text} = Typography;
@@ -24,6 +23,11 @@ const CardStyled = styled(Card)`
 const CardContainer = styled.div`
     display: flex;
 `;
+const CodeContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+`;
 
 interface SolutionsProps {
     item: Solution;
@@ -33,9 +37,9 @@ interface SolutionsProps {
 const Solution: React.FC<SolutionsProps> = ({item, setDisplayedItem}) => {
     const [tabKey, setTabKey] = useState("1");
 
-    const tabList = item.codes.map(({key}) => ({
+    const tabList = item.codes.map(({key, title}) => ({
         key,
-        tab: `method ${key}`
+        tab: title ?? `method ${key}`
     }));
 
     const renderCode = item.codes.find((element) => element.key === tabKey);
@@ -61,13 +65,34 @@ const Solution: React.FC<SolutionsProps> = ({item, setDisplayedItem}) => {
                 onTabChange={(key) => setTabKey(`${key}`)}
             >
                 <CardContainer>
-                    <SyntaxHighlighter
-                        language="javascript"
-                        style={irBlack}
-                        customStyle={{minWidth: "70%", paddingRight: "2rem"}}
-                    >
-                        {renderCode.code}
-                    </SyntaxHighlighter>
+                    <CodeContainer>
+                        <SyntaxHighlighter
+                            language="javascript"
+                            style={atelierForestDark}
+                            customStyle={{
+                                paddingRight: "2rem",
+                                filter: "brightness(1.2)"
+                            }}
+                        >
+                            {renderCode.code}
+                        </SyntaxHighlighter>
+
+                        {renderCode.example && (
+                            <>
+                                <Text type="secondary">Example</Text>
+                                <SyntaxHighlighter
+                                    language="javascript"
+                                    style={atelierForestDark}
+                                    customStyle={{
+                                        paddingRight: "2rem",
+                                        filter: "brightness(1.2)"
+                                    }}
+                                >
+                                    {renderCode.example}
+                                </SyntaxHighlighter>
+                            </>
+                        )}
+                    </CodeContainer>
                     <Text type="secondary">{item.description}</Text>
                 </CardContainer>
             </CardStyled>
