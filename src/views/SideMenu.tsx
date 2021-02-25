@@ -9,7 +9,7 @@ const {Sider} = Layout;
 
 const MenuStyled = styled(Menu)`
     height: 100%;
-    border-right: 0;
+    border-right: ${({theme}) => theme.colors.grey};
 `;
 
 interface SideMenuProps {
@@ -26,7 +26,6 @@ const SideMenu: React.FC<SideMenuProps> = ({setListPath}) => {
     return (
         <Sider width={200} className="site-layout-background">
             <MenuStyled
-                theme="light"
                 mode="inline"
                 defaultSelectedKeys={[JSType.ARRAY]}
                 defaultOpenKeys={[Category.JAVASCRIPT]}

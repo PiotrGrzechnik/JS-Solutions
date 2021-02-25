@@ -22,7 +22,8 @@ export const basic: Solution[] = [
     const fn = pipe(addTwo, double, square);
     
     fn(1);
-    // square(double(addTwo(1))) -> 36
+    // square(double(addTwo(1)))
+    // 36
     `
     },
     {
@@ -40,7 +41,8 @@ export const basic: Solution[] = [
     const fn = compose(addTwo, double, square);
 
     fn(1);
-    // -> 4 addTwo(double(square(1)))
+    // addTwo(double(square(1)))
+    // 4
     `
     }
   ],

@@ -11,7 +11,7 @@ const LayoutStyled = styled(Layout)`
     min-height: 100vh;
 `;
 const HeaderTitle = styled.h1`
-    color: #1890ff;
+    color: ${({theme}) => theme.colors.primary};
 `;
 
 const LayoutContentStyled = styled(Layout)`
