@@ -8,6 +8,8 @@ export const getTagColor = (type: JSType): string => {
             return "magenta";
         case JSType.STRING:
             return "orange";
+        case JSType.FUNCTION:
+            return "cyan";
         case JSType.NUMBER:
             return "geekblue";
         case JSType.NULL:

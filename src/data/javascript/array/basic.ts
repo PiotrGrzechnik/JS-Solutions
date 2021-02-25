@@ -2,11 +2,11 @@ import {Category, JSType, Solution} from "src/types";
 
 export const basic: Solution[] = [
 {
-    category: Category.JAVASCRIPT,
-    subcategory: JSType.ARRAY,
-    title: "Remove duplicates from an array",
-    description: " ",
-    codes: [
+  category: Category.JAVASCRIPT,
+  subcategory: JSType.ARRAY,
+  title: "Remove duplicates from an array",
+  description: " ",
+  codes: [
     {
     key: '1',
     title: 'filter',
@@ -38,7 +38,7 @@ export const basic: Solution[] = [
     // ['one','two']
     `
     }
-    ],
-    tags: [JSType.ARRAY]
+  ],
+  tags: [JSType.ARRAY]
 }
 ];

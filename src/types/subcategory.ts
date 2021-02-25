@@ -1,6 +1,7 @@
 export enum JSType {
-    OBJECT = "object",
     ARRAY = "array",
+    OBJECT = "object",
+    FUNCTION = "function",
     STRING = "string",
     NUMBER = "number",
     BOOLEAN = "boolean",
