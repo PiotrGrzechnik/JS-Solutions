@@ -1,16 +1,14 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import {List, Tag} from "antd";
+import {List} from "antd";
 import {ListPath, Solution} from "src/types";
-import {getTagColor} from "src/utils/getTagColor";
 import {getSolutionsList} from "src/utils/getSolutionsList";
 
+const ListItem = styled(List.Item)`
+    padding: 6px 0;
+`;
 const ItemTitle = styled.div`
     cursor: pointer;
-`;
-const TagsContainer = styled.div`
-    padding-left: 20px;
-    filter: opacity(0.5);
 `;
 
 interface SolutionsListProps {
@@ -31,24 +29,15 @@ const SolutionsList: React.FC<SolutionsListProps> = ({listPath, setDisplayedItem
                 itemLayout="horizontal"
                 dataSource={list}
                 renderItem={(item, i) => (
-                    <List.Item>
+                    <ListItem>
                         <List.Item.Meta
                             title={
                                 <ItemTitle onClick={() => setDisplayedItem(item)}>
                                     <span>{++i}</span> - {item.title}
                                 </ItemTitle>
                             }
-                            description={
-                                <TagsContainer>
-                                    {item.tags?.map((tag) => (
-                                        <Tag key={tag} color={getTagColor(tag)}>
-                                            {tag}
-                                        </Tag>
-                                    ))}
-                                </TagsContainer>
-                            }
                         />
-                    </List.Item>
+                    </ListItem>
                 )}
             />
         </div>

@@ -1,11 +1,11 @@
-import {Category, JSType, Solution} from "src/types";
+import {Category, JSType, Solution} from 'src/types';
 
 export const basic: Solution[] = [
 {
   category: Category.JAVASCRIPT,
   subcategory: JSType.ARRAY,
-  title: "Remove duplicates from an array",
-  description: " ",
+  title: 'Remove duplicates from an array',
+  description: '',
   codes: [
     {
     key: '1',
@@ -33,12 +33,59 @@ export const basic: Solution[] = [
     `
     const arr = ['one','two','one']
 
-    const removeDuplicatesFromArray = [...new Set(arr)]
+    removeDuplicatesFromArray = [...new Set(arr)]
+
+    // ['one','two']
+    `
+    },{
+    key: '3',
+    title: 'classic',
+    code:
+    `
+    const removeDuplicatesFromArray = (arr) => {
+      let unique = {};
+      arr.forEach((item) => {
+        if(!unique[item]) {
+          unique[item] = true;
+        }
+      });
+      return Object.keys(unique);
+    }
+    `,
+    example:
+    `
+    const arr = ['one','two','one']
+
+    removeDuplicatesFromArray(arr)
 
     // ['one','two']
     `
     }
   ],
   tags: [JSType.ARRAY]
+},
+{
+  category: Category.JAVASCRIPT,
+  subcategory: JSType.ARRAY,
+  title: 'Count occurrences',
+  description: 'Counts the occurrences of a value in an array.',
+  codes: [
+    {
+    key: '1',
+    title: 'reduce',
+    code:
+    `
+    const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0)
+    `,
+    example:
+    `
+    const arr = [1, 1, 2, 1, 2, 3]
+    
+    countOccurrences(arr, 1)
+
+    // 3
+    `
+    }],
+   tags: [JSType.ARRAY]
 }
 ];

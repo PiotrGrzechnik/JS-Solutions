@@ -12,7 +12,7 @@ export interface Solution {
     category: Category;
     subcategory: Subcategory;
     title: string;
-    description: string;
+    description?: string;
+    tags?: Subcategory[];
     codes: SolutionCode[];
-    tags: Subcategory[];
 }

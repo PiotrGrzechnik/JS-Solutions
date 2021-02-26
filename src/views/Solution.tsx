@@ -6,7 +6,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import {atelierForestDark} from "react-syntax-highlighter/dist/esm/styles/hljs";
 import {Solution} from "src/types";
 
-const {Text} = Typography;
+const {Text, Paragraph} = Typography;
 
 const Container = styled.div`
     display: flex;
@@ -28,6 +28,16 @@ const CodeContainer = styled.div`
     flex-direction: column;
     width: 70%;
 `;
+const CopyText = styled(Paragraph)`
+    font-size: 18px;
+`;
+const Description = styled(Text)`
+    padding: 0 24px;
+`;
+const customSyntaxStyle = {
+    paddingRight: "2rem",
+    filter: "brightness(1.2)"
+};
 
 interface SolutionsProps {
     item: Solution;
@@ -69,10 +79,7 @@ const Solution: React.FC<SolutionsProps> = ({item, setDisplayedItem}) => {
                         <SyntaxHighlighter
                             language="javascript"
                             style={atelierForestDark}
-                            customStyle={{
-                                paddingRight: "2rem",
-                                filter: "brightness(1.2)"
-                            }}
+                            customStyle={customSyntaxStyle}
                         >
                             {renderCode.code}
                         </SyntaxHighlighter>
@@ -83,17 +90,22 @@ const Solution: React.FC<SolutionsProps> = ({item, setDisplayedItem}) => {
                                 <SyntaxHighlighter
                                     language="javascript"
                                     style={atelierForestDark}
-                                    customStyle={{
-                                        paddingRight: "2rem",
-                                        filter: "brightness(1.2)"
-                                    }}
+                                    customStyle={customSyntaxStyle}
                                 >
                                     {renderCode.example}
                                 </SyntaxHighlighter>
                             </>
                         )}
                     </CodeContainer>
-                    <Text type="secondary">{item.description}</Text>
+
+                    <CopyText
+                        copyable={{
+                            text: renderCode.code.trim(),
+                            tooltips: ["copy this snippet", "copied!"]
+                        }}
+                    ></CopyText>
+
+                    <Description type="secondary">{item.description}</Description>
                 </CardContainer>
             </CardStyled>
         </Container>
