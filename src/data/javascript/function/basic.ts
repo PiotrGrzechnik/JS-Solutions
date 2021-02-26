@@ -5,7 +5,6 @@ export const basic: Solution[] = [
   category: Category.JAVASCRIPT,
   subcategory: JSType.FUNCTION,
   title: "Pipe (function composition)",
-  description: " ",
   codes: [
     {
     key: '1',
@@ -46,6 +45,5 @@ export const basic: Solution[] = [
     `
     }
   ],
-  tags: [JSType.FUNCTION]
 }
 ];

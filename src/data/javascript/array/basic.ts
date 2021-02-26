@@ -5,7 +5,6 @@ export const basic: Solution[] = [
   category: Category.JAVASCRIPT,
   subcategory: JSType.ARRAY,
   title: 'Remove duplicates from an array',
-  description: '',
   codes: [
     {
     key: '1',
@@ -62,13 +61,11 @@ export const basic: Solution[] = [
     `
     }
   ],
-  tags: [JSType.ARRAY]
 },
 {
   category: Category.JAVASCRIPT,
   subcategory: JSType.ARRAY,
-  title: 'Count occurrences',
-  description: 'Counts the occurrences of a value in an array.',
+  title: 'Count element occurrences in an array',
   codes: [
     {
     key: '1',
@@ -86,6 +83,5 @@ export const basic: Solution[] = [
     // 3
     `
     }],
-   tags: [JSType.ARRAY]
 }
 ];

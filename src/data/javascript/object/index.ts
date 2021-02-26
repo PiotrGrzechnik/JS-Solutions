@@ -1,5 +1,5 @@
-import {Solution} from "src/types";
+import { basic } from './basic'
 
-export const solutions: Solution[] = [
-    
-];
+const solutions = [...basic]
+
+export {solutions}
