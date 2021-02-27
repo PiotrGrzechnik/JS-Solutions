@@ -1,20 +1,18 @@
-import {Category, JSType, Solution} from "src/types";
+import {Category, JSType, Solution} from 'src/types';
 
 export const basic: Solution[] = [
-{
-  category: Category.JAVASCRIPT,
-  subcategory: JSType.FUNCTION,
-  title: "Pipe (function composition)",
-  codes: [
-    {
-    key: '1',
-    title: 'normal',
-    code:
-    `
+	{
+		category: Category.JAVASCRIPT,
+		subcategory: JSType.FUNCTION,
+		title: 'Pipe (function composition)',
+		codes: [
+			{
+				key: '1',
+				title: 'normal',
+				code: `
     const pipe = (...fns) => (arg) => fns.reduce((v, fn) => fn(v), arg);
     `,
-    example:
-    `
+				example: `
     const addTwo = (x) => x + 2;
     const double = (x) => x * 2;
     const square = (x) => x * x;
@@ -23,17 +21,15 @@ export const basic: Solution[] = [
     fn(1);
     // square(double(addTwo(1)))
     // 36
-    `
-    },
-    {
-    key: '2',
-    title: 'reverse',
-    code:
-    `
+    `,
+			},
+			{
+				key: '2',
+				title: 'reverse',
+				code: `
     const compose = (...fns) => fns.reduce((a, b) => (...args) => a(b(...args)));
     `,
-    example:
-    `
+				example: `
     const addTwo = (x) => x + 2;
     const double = (x) => x * 2;
     const square = (x) => x * x;
@@ -42,8 +38,8 @@ export const basic: Solution[] = [
     fn(1);
     // addTwo(double(square(1)))
     // 4
-    `
-    }
-  ],
-}
+    `,
+			},
+		],
+	},
 ];

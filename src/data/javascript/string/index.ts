@@ -1,5 +1,5 @@
-import { basic } from './basic'
+import {basic} from './basic';
 
-const solutions = [...basic]
+const solutions = [...basic];
 
-export {solutions}
+export {solutions};

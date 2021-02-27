@@ -1,38 +1,38 @@
-import React, {useEffect, useState} from "react";
-import styled from "styled-components";
-import {Layout} from "antd";
+import React, {useEffect, useState} from 'react';
+import styled from 'styled-components';
+import {Layout} from 'antd';
 
-import SolutionsList from "./SolutionsList";
-import Solution from "./Solution";
-import {ListPath} from "src/types";
+import SolutionsList from './SolutionsList';
+import Solution from './Solution';
+import {ListPath} from 'src/types';
 
 const {Content} = Layout;
 
 const ContentStyled = styled(Content)`
-    padding: 24px;
-    margin: 0;
-    min-height: 280px;
+	padding: 24px;
+	margin: 0;
+	min-height: 280px;
 `;
 
 interface ContentSolutionsProps {
-    listPath: ListPath;
+	listPath: ListPath;
 }
 
 const ContentSolutions: React.FC<ContentSolutionsProps> = ({listPath}) => {
-    const [displayedItem, setDisplayedItem] = useState(null);
+	const [displayedItem, setDisplayedItem] = useState(null);
 
-    useEffect(() => {
-        setDisplayedItem(null);
-    }, [listPath]);
+	useEffect(() => {
+		setDisplayedItem(null);
+	}, [listPath]);
 
-    return (
-        <ContentStyled className="site-layout-background">
-            {displayedItem ? (
-                <Solution item={displayedItem} setDisplayedItem={setDisplayedItem} />
-            ) : (
-                <SolutionsList listPath={listPath} setDisplayedItem={setDisplayedItem} />
-            )}
-        </ContentStyled>
-    );
+	return (
+		<ContentStyled className="site-layout-background">
+			{displayedItem ? (
+				<Solution item={displayedItem} setDisplayedItem={setDisplayedItem} />
+			) : (
+				<SolutionsList listPath={listPath} setDisplayedItem={setDisplayedItem} />
+			)}
+		</ContentStyled>
+	);
 };
 export default ContentSolutions;

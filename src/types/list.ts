@@ -1,3 +1,3 @@
-import {Category, Subcategory} from "./";
+import {Category, Subcategory} from './';
 
 export type ListPath = [Category, Subcategory];
