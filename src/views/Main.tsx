@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import {Layout} from 'antd';
+import { Layout } from 'antd';
 import ContentSolutions from './ContentSolutions';
 import SideMenu from './SideMenu';
-import {Category, JSType, ListPath} from 'src/types';
+import { Category, JSType, ListPath } from 'src/types';
 
-const {Header} = Layout;
+const { Header } = Layout;
 
 const LayoutStyled = styled(Layout)`
 	min-height: 100vh;
 `;
 const HeaderTitle = styled.h1`
-	color: ${({theme}) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.primary};
 `;
 
 const LayoutContentStyled = styled(Layout)`

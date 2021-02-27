@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import {Button, Card, Typography, Tag} from 'antd';
-import {OrderedListOutlined} from '@ant-design/icons';
+import { Button, Card, Typography, Tag } from 'antd';
+import { OrderedListOutlined } from '@ant-design/icons';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import {atelierForestDark} from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import {getTagColor} from 'src/utils/getTagColor';
-import {Solution} from 'src/types';
+import { atelierForestDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { getTagColor } from 'src/utils/getTagColor';
+import { Solution } from 'src/types';
 
-const {Text, Paragraph} = Typography;
+const { Text, Paragraph } = Typography;
 
 const Container = styled.div`
 	display: flex;
@@ -49,10 +49,10 @@ interface SolutionsProps {
 	setDisplayedItem: (item) => void;
 }
 
-const Solution: React.FC<SolutionsProps> = ({item, setDisplayedItem}) => {
+const Solution: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
 	const [tabKey, setTabKey] = useState('1');
 
-	const tabList = item.codes.map(({key, title}) => ({
+	const tabList = item.codes.map(({ key, title }) => ({
 		key,
 		tab: title ?? `method ${key}`,
 	}));

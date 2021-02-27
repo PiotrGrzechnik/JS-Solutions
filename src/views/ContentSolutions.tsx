@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import {Layout} from 'antd';
+import { Layout } from 'antd';
 
 import SolutionsList from './SolutionsList';
 import Solution from './Solution';
-import {ListPath} from 'src/types';
+import { ListPath } from 'src/types';
 
-const {Content} = Layout;
+const { Content } = Layout;
 
 const ContentStyled = styled(Content)`
 	padding: 24px;
@@ -18,7 +18,7 @@ interface ContentSolutionsProps {
 	listPath: ListPath;
 }
 
-const ContentSolutions: React.FC<ContentSolutionsProps> = ({listPath}) => {
+const ContentSolutions: React.FC<ContentSolutionsProps> = ({ listPath }) => {
 	const [displayedItem, setDisplayedItem] = useState(null);
 
 	useEffect(() => {

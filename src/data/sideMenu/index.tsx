@@ -5,7 +5,7 @@ import {
 	SecurityScanOutlined,
 	createFromIconfontCN,
 } from '@ant-design/icons';
-import {Category, JSType} from 'src/types';
+import { Category, JSType } from 'src/types';
 
 const IconFont = createFromIconfontCN({
 	scriptUrl: ['//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js'],

@@ -1,4 +1,4 @@
-import {ListPath, Solution} from 'src/types';
+import { ListPath, Solution } from 'src/types';
 
 export const getSolutionsList = async (path: ListPath): Promise<Record<string, Solution[]>> => {
 	const category = path[0];

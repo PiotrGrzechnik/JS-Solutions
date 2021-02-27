@@ -1,4 +1,4 @@
-import {JSType} from 'src/types';
+import { JSType } from 'src/types';
 
 export const getTagColor = (type: JSType): string => {
 	switch (type) {

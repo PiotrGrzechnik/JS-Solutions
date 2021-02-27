@@ -1,5 +1,5 @@
-import {Category} from './category';
-import {Subcategory} from './subcategory';
+import { Category } from './category';
+import { Subcategory } from './subcategory';
 
 export interface SolutionCode {
 	key: string;

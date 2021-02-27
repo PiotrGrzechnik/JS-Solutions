@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import {List, Typography} from 'antd';
-import {ListPath, Solution} from 'src/types';
-import {getSolutionsList} from 'src/utils/getSolutionsList';
+import { List, Typography } from 'antd';
+import { ListPath, Solution } from 'src/types';
+import { getSolutionsList } from 'src/utils/getSolutionsList';
 
-const {Title} = Typography;
+const { Title } = Typography;
 
 const TitleStyled = styled(Title)`
 	text-align: center;
@@ -22,7 +22,7 @@ interface SolutionsListProps {
 	setDisplayedItem: (item) => void;
 }
 
-const SolutionsList: React.FC<SolutionsListProps> = ({listPath, setDisplayedItem}) => {
+const SolutionsList: React.FC<SolutionsListProps> = ({ listPath, setDisplayedItem }) => {
 	const [list, setList] = useState<Solution[]>([]);
 
 	useEffect(() => {

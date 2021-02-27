@@ -1,4 +1,4 @@
-import {Category, JSType, Solution} from 'src/types';
+import { Category, JSType, Solution } from 'src/types';
 
 export const basic: Solution[] = [
 	{
