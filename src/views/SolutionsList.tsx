@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { List, Typography } from 'antd';
 import { ListPath, Solution } from 'src/types';
-import { getSolutionsList } from 'src/utils/getSolutionsList';
+import { getSolutionsList } from 'src/utils';
 
 const { Title } = Typography;
 

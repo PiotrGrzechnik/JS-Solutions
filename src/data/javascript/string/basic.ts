@@ -11,24 +11,24 @@ export const basic: Solution[] = [
 				key: '1',
 				title: 'first',
 				code: `
-    const capitalize = ([first, ...rest]) => first.toUpperCase() + rest.join('')
+const capitalize = ([first, ...rest]) => first.toUpperCase() + rest.join('')
     `,
 				example: `
-    capitalize('dolorem ipsum')
+capitalize('dolorem ipsum')
 
-    // 'Dolorem ipsum'
+// 'Dolorem ipsum'
     `,
 			},
 			{
 				key: '2',
 				title: 'every',
 				code: `
-    const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase())
+const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase())
     `,
 				example: `
-    capitalizeEveryWord('dolorem ipsum')
+capitalizeEveryWord('dolorem ipsum')
 
-    // 'Dolorem Ipsum'
+// 'Dolorem Ipsum'
     `,
 			},
 		],

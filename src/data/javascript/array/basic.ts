@@ -94,6 +94,7 @@ const bifurcateBy = (arr, fn) => arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0
 				example: `
 const arr = ['beep', 'boop', 'foo', 'bar']
 const func = x => x[0] === 'b'
+
 bifurcateBy(arr, func)
 
 // [['beep', 'boop', 'bar'], ['foo']]

@@ -4,7 +4,7 @@ import { Button, Card, Typography, Tag } from 'antd';
 import { OrderedListOutlined } from '@ant-design/icons';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierForestDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { getTagColor } from 'src/utils/getTagColor';
+import { getTagColor, replaceTabWithSpaces } from 'src/utils';
 import { Solution } from 'src/types';
 
 const { Text, Paragraph } = Typography;
@@ -89,7 +89,7 @@ const Solution: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
 							style={atelierForestDark}
 							customStyle={customSyntaxStyle}
 						>
-							{renderCode.code}
+							{replaceTabWithSpaces(renderCode.code)}
 						</SyntaxHighlighter>
 
 						{renderCode.example && (
@@ -100,7 +100,7 @@ const Solution: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
 									style={atelierForestDark}
 									customStyle={customSyntaxStyle}
 								>
-									{renderCode.example}
+									{replaceTabWithSpaces(renderCode.example)}
 								</SyntaxHighlighter>
 							</>
 						)}
