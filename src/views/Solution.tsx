@@ -40,7 +40,7 @@ const Description = styled(Text)`
 	padding: 0 32px;
 `;
 const customSyntaxStyle = {
-	paddingRight: '2rem',
+	padding: '0 32px',
 	filter: 'brightness(1.2)',
 };
 
@@ -111,7 +111,7 @@ const Solution: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
 							text: renderCode.code.trim(),
 							tooltips: ['copy this snippet', 'copied!'],
 						}}
-					></CopyText>
+					/>
 
 					<Description type="secondary">{item.description}</Description>
 				</CardContainer>

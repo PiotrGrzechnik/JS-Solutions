@@ -5,13 +5,13 @@ import {
 	SecurityScanOutlined,
 	createFromIconfontCN,
 } from '@ant-design/icons';
-import { Category, JSType } from 'src/types';
+import { Category, JSType, ReactType, MenuSection } from 'src/types';
 
 const IconFont = createFromIconfontCN({
 	scriptUrl: ['//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js'],
 });
 
-export const menuSections = [
+export const menuSections: MenuSection[] = [
 	{
 		category: Category.JAVASCRIPT,
 		icon: <IconFont type="icon-javascript" />,
@@ -25,7 +25,7 @@ export const menuSections = [
 	{
 		category: Category.REACT,
 		icon: <GlobalOutlined />,
-		subcategories: [],
+		subcategories: [ReactType.HOOKS],
 	},
 	{
 		category: Category.TESTS,

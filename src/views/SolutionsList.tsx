@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { List, Typography } from 'antd';
 import { ListPath, Solution } from 'src/types';
-import { getSolutionsList } from 'src/utils';
+import { capitalize, getSolutionsList } from 'src/utils';
 
 const { Title } = Typography;
 
@@ -31,7 +31,7 @@ const SolutionsList: React.FC<SolutionsListProps> = ({ listPath, setDisplayedIte
 
 	return (
 		<div>
-			<TitleStyled level={4}>{listPath[listPath.length - 1]}</TitleStyled>
+			<TitleStyled level={4}>{capitalize(`${listPath[listPath.length - 1]}`)}</TitleStyled>
 
 			<List
 				itemLayout="horizontal"

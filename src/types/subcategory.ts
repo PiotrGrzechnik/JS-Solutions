@@ -9,4 +9,8 @@ export enum JSType {
 	UNDEFINED = 'undefined',
 }
 
-export type Subcategory = JSType;
+export enum ReactType {
+	HOOKS = 'hooks',
+}
+
+export type Subcategory = JSType | ReactType;

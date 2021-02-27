@@ -2,16 +2,15 @@ Code have to starts from 1st column in file to avoid indentanation problem in di
 
 
 BASIC TEMPLATE SOLUTION:
+(only required properties)
 
 {
   category: Category.CATEGORY,
-  subcategory: JSType.SUBCATEGORY,
+  subcategory: Subcategory.SUBCATEGORY,
   title: '',
-  description: '',
   codes: [
     {
     key: '1',
-    title: '',
     code:
     `
 Your code
@@ -20,5 +19,6 @@ Your code
     `
 Your example
     `
-    }],
-}
+    }
+  ],
+},

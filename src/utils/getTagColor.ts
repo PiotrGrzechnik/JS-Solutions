@@ -1,6 +1,6 @@
-import { JSType } from 'src/types';
+import { JSType, Subcategory } from 'src/types';
 
-export const getTagColor = (type: JSType): string => {
+export const getTagColor = (type: Subcategory): string => {
 	switch (type) {
 		case JSType.ARRAY:
 			return 'blue';
