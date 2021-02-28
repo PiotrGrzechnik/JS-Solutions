@@ -1,9 +1,11 @@
-Code have to starts from 1st column in file to avoid indentanation problem in displayed syntax
+### RULES:  
+- Code must start from the first column in file to avoid indentanation problem in displayed syntax  
+- In regex escape character must be double `\\`  
 
 
-BASIC TEMPLATE SOLUTION:
-(only required properties)
-
+### BASIC TEMPLATE SOLUTION:  
+(only required properties)  
+```
 {
   category: Category.CATEGORY,
   subcategory: Subcategory.SUBCATEGORY,
@@ -22,3 +24,4 @@ Your example
     }
   ],
 },
+```

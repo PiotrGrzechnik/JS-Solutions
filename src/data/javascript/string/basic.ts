@@ -23,7 +23,7 @@ capitalize('dolorem ipsum')
 				key: '2',
 				title: 'every',
 				code: `
-const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase())
+const capitalizeEveryWord = str => str.replace(/\\b[a-z]/g, char => char.toUpperCase())
     `,
 				example: `
 capitalizeEveryWord('dolorem ipsum')

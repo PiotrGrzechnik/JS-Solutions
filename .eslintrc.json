@@ -19,8 +19,9 @@
 	},
 	"rules": {
 		"@typescript-eslint/explicit-function-return-type": "off",
-		"@typescript-eslint/no-unused-vars": ["warn", {"ignoreRestSiblings": true}],
+		"@typescript-eslint/no-unused-vars": ["warn", { "ignoreRestSiblings": true }],
 		"@typescript-eslint/no-shadow": ["error"],
+		"@typescript-eslint/no-non-null-asserted-optional-chain": "error",
 		"react/jsx-filename-extension": [
 			"warn",
 			{
@@ -33,7 +34,8 @@
 		"no-shadow": "off",
 		"eol-last": ["error", "always"],
 		"comma-dangle": ["error", "always-multiline"],
-		"indent": ["error", "tab", {"SwitchCase": 1}]
+		"indent": ["error", "tab", { "SwitchCase": 1 }],
+		"no-unsafe-optional-chaining": "error"
 	},
 	"settings": {
 		"react": {

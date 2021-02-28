@@ -15,7 +15,7 @@ export const menuSections: MenuSection[] = [
 	{
 		category: Category.JAVASCRIPT,
 		icon: <IconFont type="icon-javascript" />,
-		subcategories: [JSType.ARRAY, JSType.OBJECT, JSType.STRING, JSType.FUNCTION, JSType.NUMBER],
+		subcategories: [JSType.ARRAY, JSType.OBJECT, JSType.FUNCTION, JSType.STRING, JSType.NUMBER],
 	},
 	{
 		category: Category.ALGORITHMS,

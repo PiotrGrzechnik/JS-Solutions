@@ -29,12 +29,20 @@ const CardContainer = styled.div`
 	display: flex;
 `;
 const CodeContainer = styled.div`
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	width: 75%;
 `;
 const CopyText = styled(Paragraph)`
+	position: absolute;
+	top: 6px;
+	right: 6px;
 	font-size: 18px;
+
+	svg {
+		filter: drop-shadow(0px 0px 11px ${({ theme }) => theme.colors.primary});
+	}
 `;
 const Description = styled(Text)`
 	padding: 0 32px;
@@ -104,14 +112,13 @@ const Solution: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
 								</SyntaxHighlighter>
 							</>
 						)}
+						<CopyText
+							copyable={{
+								text: renderCode.code.trim(),
+								tooltips: ['copy this snippet', 'copied!'],
+							}}
+						/>
 					</CodeContainer>
-
-					<CopyText
-						copyable={{
-							text: renderCode.code.trim(),
-							tooltips: ['copy this snippet', 'copied!'],
-						}}
-					/>
 
 					<Description type="secondary">{item.description}</Description>
 				</CardContainer>

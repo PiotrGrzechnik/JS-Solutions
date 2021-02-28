@@ -10,7 +10,7 @@ export const basic: Solution[] = [
 				key: '1',
 				title: 'normal',
 				code: `
-const pipe = (...fns) => (arg) => fns.reduce((v, fn) => fn(v), arg);
+const pipe = (...fns) => (arg) => fns.reduce((v, fn) => fn(v), arg)
     `,
 				example: `
 const addTwo = (x) => x + 2;
@@ -27,7 +27,7 @@ fn(1);
 				key: '2',
 				title: 'reverse',
 				code: `
-const compose = (...fns) => fns.reduce((a, b) => (...args) => a(b(...args)));
+const compose = (...fns) => fns.reduce((a, b) => (...args) => a(b(...args)))
     `,
 				example: `
 const addTwo = (x) => x + 2;
