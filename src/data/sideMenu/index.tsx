@@ -5,7 +5,7 @@ import {
 	SecurityScanOutlined,
 	createFromIconfontCN,
 } from '@ant-design/icons';
-import { Category, JSType, ReactType, MenuSection } from 'src/types';
+import { Category, JSSubcategory, ReactType, MenuSection } from 'src/types';
 
 const IconFont = createFromIconfontCN({
 	scriptUrl: ['//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js'],
@@ -15,7 +15,14 @@ export const menuSections: MenuSection[] = [
 	{
 		category: Category.JAVASCRIPT,
 		icon: <IconFont type="icon-javascript" />,
-		subcategories: [JSType.ARRAY, JSType.OBJECT, JSType.FUNCTION, JSType.STRING, JSType.NUMBER],
+		subcategories: [
+			JSSubcategory.ARRAY,
+			JSSubcategory.OBJECT,
+			JSSubcategory.FUNCTION,
+			JSSubcategory.STRING,
+			JSSubcategory.NUMBER,
+			JSSubcategory.BROWSER,
+		],
 	},
 	{
 		category: Category.ALGORITHMS,

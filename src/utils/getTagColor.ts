@@ -1,22 +1,20 @@
-import { JSType, Subcategory } from 'src/types';
+import { JSSubcategory, Subcategory } from 'src/types';
 
 export const getTagColor = (type: Subcategory): string => {
 	switch (type) {
-		case JSType.ARRAY:
+		case JSSubcategory.ARRAY:
 			return 'blue';
-		case JSType.OBJECT:
+		case JSSubcategory.OBJECT:
 			return 'magenta';
-		case JSType.STRING:
+		case JSSubcategory.STRING:
 			return 'orange';
-		case JSType.FUNCTION:
+		case JSSubcategory.FUNCTION:
 			return 'cyan';
-		case JSType.NUMBER:
+		case JSSubcategory.NUMBER:
 			return 'geekblue';
-		case JSType.NULL:
+		case JSSubcategory.BROWSER:
 			return 'lime';
-		case JSType.BOOLEAN:
-			return 'purple';
-		case JSType.UNDEFINED:
+		default:
 			return 'default';
 	}
 };

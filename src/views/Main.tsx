@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 import ContentSolutions from './ContentSolutions';
 import SideMenu from './SideMenu';
-import { Category, JSType, ListPath } from 'src/types';
+import { Category, JSSubcategory, ListPath } from 'src/types';
 
 const { Header } = Layout;
 
@@ -21,7 +21,7 @@ const LayoutContentStyled = styled(Layout)`
 const Main: React.FC = () => {
 	const [listSolutionsPath, setListSolutionsPath] = useState<ListPath>([
 		Category.JAVASCRIPT,
-		JSType.ARRAY,
+		JSSubcategory.ARRAY,
 	]);
 
 	return (

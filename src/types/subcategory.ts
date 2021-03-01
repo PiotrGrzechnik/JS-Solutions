@@ -1,16 +1,14 @@
-export enum JSType {
+export enum JSSubcategory {
 	ARRAY = 'array',
 	OBJECT = 'object',
 	FUNCTION = 'function',
 	STRING = 'string',
 	NUMBER = 'number',
-	BOOLEAN = 'boolean',
-	NULL = 'null',
-	UNDEFINED = 'undefined',
+	BROWSER = 'browser',
 }
 
 export enum ReactType {
 	HOOKS = 'hooks',
 }
 
-export type Subcategory = JSType | ReactType;
+export type Subcategory = JSSubcategory | ReactType;

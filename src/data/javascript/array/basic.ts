@@ -1,9 +1,9 @@
-import { Category, JSType, Solution } from 'src/types';
+import { Category, JSSubcategory, Solution } from 'src/types';
 
 export const basic: Solution[] = [
 	{
 		category: Category.JAVASCRIPT,
-		subcategory: JSType.ARRAY,
+		subcategory: JSSubcategory.ARRAY,
 		title: 'Remove duplicates from an array',
 		codes: [
 			{
@@ -61,7 +61,7 @@ removeDuplicatesFromArray(arr)
 	},
 	{
 		category: Category.JAVASCRIPT,
-		subcategory: JSType.ARRAY,
+		subcategory: JSSubcategory.ARRAY,
 		title: 'Count element occurrences in an array',
 		codes: [
 			{
@@ -82,7 +82,7 @@ countOccurrences(arr, 1)
 	},
 	{
 		category: Category.JAVASCRIPT,
-		subcategory: JSType.ARRAY,
+		subcategory: JSSubcategory.ARRAY,
 		title: 'Split array to two arrays based on condition',
 		codes: [
 			{

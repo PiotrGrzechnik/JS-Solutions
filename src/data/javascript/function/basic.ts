@@ -1,9 +1,9 @@
-import { Category, JSType, Solution } from 'src/types';
+import { Category, JSSubcategory, Solution } from 'src/types';
 
 export const basic: Solution[] = [
 	{
 		category: Category.JAVASCRIPT,
-		subcategory: JSType.FUNCTION,
+		subcategory: JSSubcategory.FUNCTION,
 		title: 'Pipe (function composition)',
 		codes: [
 			{
