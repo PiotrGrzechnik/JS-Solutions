@@ -30,6 +30,7 @@ const CodeContainer = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	max-width: 1240px;
 `;
 const CopyText = styled(Paragraph)`
 	position: absolute;
