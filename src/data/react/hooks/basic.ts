@@ -23,7 +23,7 @@ const useIsMountedRef = () => {
 	return isMounted;
 }
       `,
-				example: `
+				usage: `
 // In component:
 
 const isMounted = useIsMountedRef();

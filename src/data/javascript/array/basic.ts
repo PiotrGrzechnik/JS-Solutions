@@ -12,7 +12,7 @@ export const basic: Solution[] = [
 				code: `
 const removeDuplicatesFromArray = (arr) => arr.filter((item, index) => arr.indexOf(item) === index)
 				`,
-				example: `
+				usage: `
 const arr = ['one','two','one']
 
 removeDuplicatesFromArray(arr)
@@ -26,7 +26,7 @@ removeDuplicatesFromArray(arr)
 				code: `
 const removeDuplicatesFromArray = [...new Set(arr)]
     `,
-				example: `
+				usage: `
 const arr = ['one','two','one']
 
 removeDuplicatesFromArray = [...new Set(arr)]
@@ -49,7 +49,7 @@ const removeDuplicatesFromArray = (arr) => {
 	return Object.keys(unique);
 }
     `,
-				example: `
+				usage: `
 const arr = ['one','two','one']
 
 removeDuplicatesFromArray(arr)
@@ -70,7 +70,7 @@ removeDuplicatesFromArray(arr)
 				code: `
 const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0)
     `,
-				example: `
+				usage: `
 const arr = [1, 1, 2, 1, 2, 3]
 
 countOccurrences(arr, 1)
@@ -91,7 +91,7 @@ countOccurrences(arr, 1)
 				code: `
 const bifurcateBy = (arr, fn) => arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []])
 		`,
-				example: `
+				usage: `
 const arr = ['beep', 'boop', 'foo', 'bar']
 const func = x => x[0] === 'b'
 

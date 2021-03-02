@@ -12,7 +12,7 @@ export const basic: Solution[] = [
 				code: `
 const pipe = (...fns) => (arg) => fns.reduce((v, fn) => fn(v), arg)
     `,
-				example: `
+				usage: `
 const addTwo = (x) => x + 2;
 const double = (x) => x * 2;
 const square = (x) => x * x;
@@ -29,7 +29,7 @@ fn(1);
 				code: `
 const compose = (...fns) => fns.reduce((a, b) => (...args) => a(b(...args)))
     `,
-				example: `
+				usage: `
 const addTwo = (x) => x + 2;
 const double = (x) => x * 2;
 const square = (x) => x * x;

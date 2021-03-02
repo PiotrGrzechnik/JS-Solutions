@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Button, Card, Typography, Tag } from 'antd';
 import { OrderedListOutlined } from '@ant-design/icons';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import ReactMarkdown from 'react-markdown';
 import { atelierForestDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { getTagColor, replaceTabWithSpaces } from 'src/utils';
 import { Solution } from 'src/types';
@@ -25,14 +26,10 @@ const TagsContainer = styled.div`
 const CardStyled = styled(Card)`
 	flex: 1;
 `;
-const CardContainer = styled.div`
-	display: flex;
-`;
 const CodeContainer = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	width: 75%;
 `;
 const CopyText = styled(Paragraph)`
 	position: absolute;
@@ -43,9 +40,6 @@ const CopyText = styled(Paragraph)`
 	svg {
 		filter: drop-shadow(0px 0px 11px ${({ theme }) => theme.colors.primary});
 	}
-`;
-const Description = styled(Text)`
-	padding: 0 32px;
 `;
 const customSyntaxStyle = {
 	padding: '0 32px',
@@ -90,38 +84,36 @@ const Solution: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
 				tabList={tabList}
 				onTabChange={(key) => setTabKey(`${key}`)}
 			>
-				<CardContainer>
-					<CodeContainer>
-						<SyntaxHighlighter
-							language="javascript"
-							style={atelierForestDark}
-							customStyle={customSyntaxStyle}
-						>
-							{replaceTabWithSpaces(renderCode.code)}
-						</SyntaxHighlighter>
+				<CodeContainer>
+					<SyntaxHighlighter
+						language="javascript"
+						style={atelierForestDark}
+						customStyle={customSyntaxStyle}
+					>
+						{replaceTabWithSpaces(renderCode.code)}
+					</SyntaxHighlighter>
 
-						{renderCode.example && (
-							<>
-								<Text type="secondary">Example</Text>
-								<SyntaxHighlighter
-									language="javascript"
-									style={atelierForestDark}
-									customStyle={customSyntaxStyle}
-								>
-									{replaceTabWithSpaces(renderCode.example)}
-								</SyntaxHighlighter>
-							</>
-						)}
-						<CopyText
-							copyable={{
-								text: renderCode.code.trim(),
-								tooltips: ['copy this snippet', 'copied!'],
-							}}
-						/>
-					</CodeContainer>
+					{renderCode.usage && (
+						<>
+							<Text type="secondary">Usage</Text>
+							<SyntaxHighlighter
+								language="javascript"
+								style={atelierForestDark}
+								customStyle={customSyntaxStyle}
+							>
+								{replaceTabWithSpaces(renderCode.usage)}
+							</SyntaxHighlighter>
+						</>
+					)}
+					<CopyText
+						copyable={{
+							text: renderCode.code.trim(),
+							tooltips: ['copy this snippet', 'copied!'],
+						}}
+					/>
+				</CodeContainer>
 
-					<Description type="secondary">{item.description}</Description>
-				</CardContainer>
+				<ReactMarkdown>{item?.description}</ReactMarkdown>
 			</CardStyled>
 		</Container>
 	);

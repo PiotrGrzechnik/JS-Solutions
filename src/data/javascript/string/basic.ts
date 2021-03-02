@@ -13,7 +13,7 @@ export const basic: Solution[] = [
 				code: `
 const capitalize = ([first, ...rest]) => first.toUpperCase() + rest.join('')
     `,
-				example: `
+				usage: `
 capitalize('dolorem ipsum')
 
 // 'Dolorem ipsum'
@@ -25,7 +25,7 @@ capitalize('dolorem ipsum')
 				code: `
 const capitalizeEveryWord = str => str.replace(/\\b[a-z]/g, char => char.toUpperCase())
     `,
-				example: `
+				usage: `
 capitalizeEveryWord('dolorem ipsum')
 
 // 'Dolorem Ipsum'

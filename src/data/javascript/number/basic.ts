@@ -11,7 +11,7 @@ export const basic: Solution[] = [
 				code: `
 const average = (...args) => args.reduce((a, b) => a + b) / args.length
       `,
-				example: `
+				usage: `
 average(1, 2, 3, 4);
 
 // 2.5

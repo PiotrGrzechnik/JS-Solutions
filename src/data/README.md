@@ -17,9 +17,9 @@
     `
 Your code
     `,
-    example:
+    usage:
     `
-Your example
+Usage
     `
     }
   ],
