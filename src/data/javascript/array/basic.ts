@@ -68,7 +68,7 @@ removeDuplicatesFromArray(arr)
 				key: '1',
 				title: 'reduce',
 				code: `
-const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0)
+const countOccurrences = (arr, val) => arr.reduce((acc, item) => (item === val ? acc + 1 : acc), 0)
     `,
 				usage: `
 const arr = [1, 1, 2, 1, 2, 3]
@@ -84,12 +84,23 @@ countOccurrences(arr, 1)
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.ARRAY,
 		title: 'Split array to two arrays based on condition',
+		description: `
+### Explanation:
+1. Take each item from array and invoke provided function with item as parameter
+2. If function return true add to first array
+3. If function return false add to second array
+4. Return array of two arrays
+		
+				`,
 		codes: [
 			{
 				key: '1',
 				title: 'reduce',
 				code: `
-const bifurcateBy = (arr, fn) => arr.reduce((acc, val, i) => (acc[fn(val, i) ? 0 : 1].push(val), acc), [[], []])
+const bifurcateBy = (arr, fn) =>
+	arr.reduce((acc, val, i) =>
+		(acc[fn(val, i) ? 0 : 1].push(val), acc)
+	,[[], []])
 		`,
 				usage: `
 const arr = ['beep', 'boop', 'foo', 'bar']

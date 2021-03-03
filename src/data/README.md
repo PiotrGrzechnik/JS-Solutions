@@ -4,7 +4,7 @@
 
 
 ### BASIC TEMPLATE SOLUTION:  
-(only required properties)  
+(to copy/paste)  
 ```
 {
   category: Category.CATEGORY,

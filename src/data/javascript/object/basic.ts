@@ -66,20 +66,59 @@ const originalObj = {
 const copiedObj = deepCopy(originalObj)
 copiedObj.hello.word = 'excel'
 
-// originalObj:
 // const originalObj = {
 //   hello: {
-//     word: "world"
+//     word: "word"
 //   }
 // }
 
-// copiedObj:
 // const copiedObj = {
 //   hello: {
 //     word: "excel"
 //   }
 // }
 
+      `,
+			},
+		],
+	},
+	{
+		category: Category.JAVASCRIPT,
+		subcategory: JSSubcategory.OBJECT,
+		title: 'Get array of objects in order, based on property from another list',
+		codes: [
+			{
+				key: '1',
+				title: 'reduce',
+				code: `
+const getListOfObjects = (list, listOfObjects, key) =>
+  list.reduce((acc, item) => {
+    const foundItem = listOfObjects.find(obj => obj[key] === item)
+
+    if (foundItem) {
+      return [...acc, foundItem]
+    }
+
+    return acc
+}, [])
+      `,
+				usage: `
+const list = [1, 2, 3]
+const listOfObjects = [
+  { id: 2 },
+  { id: 1 },
+  { id: 3 },
+  { id: 4 }
+]
+const key = 'id'
+
+const result = getListOfObjects(list, listOfObjects, key)
+
+// const result = [
+//   { id: 1 },
+//   { id: 2 },
+//   { id: 3 },
+// ]
       `,
 			},
 		],
