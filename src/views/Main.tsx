@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 import ContentSolutions from './ContentSolutions';
 import SideMenu from './SideMenu';
-import { Category, JSSubcategory, ListPath } from 'src/types';
+import { ListPath } from 'src/types';
+import StartView from './StartView';
 
 const { Header } = Layout;
 
@@ -12,6 +13,11 @@ const LayoutStyled = styled(Layout)`
 `;
 const HeaderTitle = styled.h1`
 	color: ${({ theme }) => theme.colors.primary};
+	cursor: pointer;
+
+	&:hover {
+		color: ${({ theme }) => theme.colors.primaryLight};
+	}
 `;
 
 const LayoutContentStyled = styled(Layout)`
@@ -19,20 +25,21 @@ const LayoutContentStyled = styled(Layout)`
 `;
 
 const Main: React.FC = () => {
-	const [listSolutionsPath, setListSolutionsPath] = useState<ListPath>([
-		Category.JAVASCRIPT,
-		JSSubcategory.ARRAY,
-	]);
+	const [listSolutionsPath, setListSolutionsPath] = useState<ListPath | null>(null);
 
 	return (
 		<LayoutStyled>
 			<Header className="header">
-				<HeaderTitle>JS Solutions</HeaderTitle>
+				<HeaderTitle onClick={() => setListSolutionsPath(null)}>JS Solutions</HeaderTitle>
 			</Header>
 			<Layout>
-				<SideMenu setListPath={setListSolutionsPath} />
+				<SideMenu listPath={listSolutionsPath} setListPath={setListSolutionsPath} />
 				<LayoutContentStyled>
-					<ContentSolutions listPath={listSolutionsPath} />
+					{listSolutionsPath ? (
+						<ContentSolutions listPath={listSolutionsPath} />
+					) : (
+						<StartView setListPath={setListSolutionsPath} />
+					)}
 				</LayoutContentStyled>
 			</Layout>
 		</LayoutStyled>

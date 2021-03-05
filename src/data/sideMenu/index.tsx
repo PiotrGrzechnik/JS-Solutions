@@ -25,14 +25,14 @@ export const menuSections: MenuSection[] = [
 		],
 	},
 	{
-		category: Category.ALGORITHMS,
-		icon: <CodepenOutlined />,
-		subcategories: [],
-	},
-	{
 		category: Category.REACT,
 		icon: <GlobalOutlined />,
 		subcategories: [ReactType.HOOKS],
+	},
+	{
+		category: Category.ALGORITHMS,
+		icon: <CodepenOutlined />,
+		subcategories: [],
 	},
 	{
 		category: Category.TESTS,

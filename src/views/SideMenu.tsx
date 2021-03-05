@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
-import { Category, JSSubcategory, ListPath } from 'src/types';
+import { ListPath } from 'src/types';
 import { menuSections } from 'src/data/sideMenu';
 
 const { SubMenu } = Menu;
@@ -12,26 +12,23 @@ const MenuStyled = styled(Menu)`
 	border-right: ${({ theme }) => theme.colors.grey};
 `;
 
-const defaultSelectedKeys = [JSSubcategory.ARRAY];
-const defaultOpenKeys = [Category.JAVASCRIPT];
-
 interface SideMenuProps {
+	listPath: ListPath;
 	setListPath: (listPath) => void;
 }
 
-const SideMenu: React.FC<SideMenuProps> = ({ setListPath }) => {
+const SideMenu: React.FC<SideMenuProps> = ({ listPath, setListPath }) => {
 	const onSubcategoryClick = (data) => {
-		const listPath: ListPath = data.keyPath.reverse();
-
-		setListPath(listPath);
+		const path: ListPath = data.keyPath.reverse();
+		setListPath(path);
 	};
 
 	return (
 		<Sider width={200} className="site-layout-background">
 			<MenuStyled
 				mode="inline"
-				defaultSelectedKeys={defaultSelectedKeys}
-				defaultOpenKeys={defaultOpenKeys}
+				defaultSelectedKeys={listPath ?? []}
+				defaultOpenKeys={listPath ?? []}
 				onClick={onSubcategoryClick}
 			>
 				{menuSections.map(({ category, subcategories, icon }) => (
