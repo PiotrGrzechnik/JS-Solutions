@@ -14,10 +14,6 @@ const LayoutStyled = styled(Layout)`
 const HeaderTitle = styled.h1`
 	color: ${({ theme }) => theme.colors.primary};
 	cursor: pointer;
-
-	&:hover {
-		color: ${({ theme }) => theme.colors.primaryLight};
-	}
 `;
 
 const LayoutContentStyled = styled(Layout)`
@@ -25,20 +21,20 @@ const LayoutContentStyled = styled(Layout)`
 `;
 
 const Main: React.FC = () => {
-	const [listSolutionsPath, setListSolutionsPath] = useState<ListPath | null>(null);
+	const [listPath, setListPath] = useState<ListPath | null>(null);
 
 	return (
 		<LayoutStyled>
 			<Header className="header">
-				<HeaderTitle onClick={() => setListSolutionsPath(null)}>JS Solutions</HeaderTitle>
+				<HeaderTitle onClick={() => setListPath(null)}>JS Solutions</HeaderTitle>
 			</Header>
 			<Layout>
-				<SideMenu listPath={listSolutionsPath} setListPath={setListSolutionsPath} />
+				<SideMenu listPath={listPath} setListPath={setListPath} />
 				<LayoutContentStyled>
-					{listSolutionsPath ? (
-						<ContentSolutions listPath={listSolutionsPath} />
+					{listPath ? (
+						<ContentSolutions listPath={listPath} />
 					) : (
-						<StartView setListPath={setListSolutionsPath} />
+						<StartView setListPath={setListPath} />
 					)}
 				</LayoutContentStyled>
 			</Layout>

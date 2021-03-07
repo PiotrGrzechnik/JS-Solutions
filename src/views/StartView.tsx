@@ -40,9 +40,8 @@ const Subcategory = styled.div`
 	}
 
 	&:hover {
-		color: ${({ theme }) => theme.colors.primaryLight};
-		box-shadow: 2px 2px 5px 0px #e7e7e7;
-		transform: translateY(-1px);
+		color: ${({ theme }) => theme.colors.primaryDark};
+		box-shadow: ${({ theme }) => theme.colors.lightGrey} 4px 4px 3px;
 	}
 `;
 

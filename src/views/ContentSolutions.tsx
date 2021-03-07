@@ -9,6 +9,8 @@ import { ListPath } from 'src/types';
 const { Content } = Layout;
 
 const ContentStyled = styled(Content)`
+	display: flex;
+	flex-direction: column;
 	padding: 24px;
 	margin: 0;
 	min-height: 280px;
