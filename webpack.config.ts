@@ -3,6 +3,7 @@ import webpack, { Configuration } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
+import MomentLocalesPlugin from 'moment-locales-webpack-plugin';
 
 const webpackConfig = (env): Configuration => ({
 	entry: './src/index.tsx',
@@ -21,11 +22,8 @@ const webpackConfig = (env): Configuration => ({
 		rules: [
 			{
 				test: /\.tsx?$/,
-				loader: 'ts-loader',
-				options: {
-					transpileOnly: true,
-				},
-				exclude: /dist/,
+				loader: 'babel-loader',
+				exclude: /build/,
 			},
 			{
 				test: /\.css$/i,
@@ -47,6 +45,7 @@ const webpackConfig = (env): Configuration => ({
 				files: './src/**/*.{ts,tsx,js,jsx}', // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
 			},
 		}),
+		new MomentLocalesPlugin(),
 	],
 });
 
