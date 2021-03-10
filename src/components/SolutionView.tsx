@@ -52,7 +52,7 @@ interface SolutionsProps {
 	setDisplayedItem: (item) => void;
 }
 
-const Solution: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
+const SolutionView: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
 	const [tabKey, setTabKey] = useState('1');
 
 	const tabList = item.codes.map(({ key, title }) => ({
@@ -120,4 +120,4 @@ const Solution: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
 	);
 };
 
-export default Solution;
+export default SolutionView;

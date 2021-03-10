@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 
 import SolutionsList from './SolutionsList';
-import Solution from './Solution';
+import SolutionView from './SolutionView';
 import { ListPath } from 'src/types';
 
 const { Content } = Layout;
@@ -30,7 +30,7 @@ const ContentSolutions: React.FC<ContentSolutionsProps> = ({ listPath }) => {
 	return (
 		<ContentStyled className="site-layout-background">
 			{displayedItem ? (
-				<Solution item={displayedItem} setDisplayedItem={setDisplayedItem} />
+				<SolutionView item={displayedItem} setDisplayedItem={setDisplayedItem} />
 			) : (
 				<SolutionsList listPath={listPath} setDisplayedItem={setDisplayedItem} />
 			)}

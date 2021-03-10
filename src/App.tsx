@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import Main from './views/Main';
+import Main from './components/Main';
 import { theme } from './style/defaultTheme';
 import 'antd/dist/antd.css';
 
