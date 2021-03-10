@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FunctionComponent, memo, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Layout } from 'antd';
 
@@ -20,7 +20,7 @@ interface ContentSolutionsProps {
 	listPath: ListPath;
 }
 
-const ContentSolutions: React.FC<ContentSolutionsProps> = ({ listPath }) => {
+const ContentSolutions: FunctionComponent<ContentSolutionsProps> = ({ listPath }) => {
 	const [displayedItem, setDisplayedItem] = useState(null);
 
 	useEffect(() => {
@@ -37,4 +37,5 @@ const ContentSolutions: React.FC<ContentSolutionsProps> = ({ listPath }) => {
 		</ContentStyled>
 	);
 };
-export default ContentSolutions;
+
+export default memo(ContentSolutions);

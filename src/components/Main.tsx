@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FunctionComponent, memo, useState } from 'react';
 import styled from 'styled-components';
 import { Layout } from 'antd';
 import ContentSolutions from './ContentSolutions';
@@ -20,7 +20,7 @@ const LayoutContentStyled = styled(Layout)`
 	padding: 0 24px 24px;
 `;
 
-const Main: React.FC = () => {
+const Main: FunctionComponent = () => {
 	const [listPath, setListPath] = useState<ListPath | null>(null);
 
 	return (
@@ -42,4 +42,4 @@ const Main: React.FC = () => {
 	);
 };
 
-export default Main;
+export default memo(Main);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FunctionComponent, memo, useState } from 'react';
 import styled from 'styled-components';
 import { Button, Card, Typography, Tag } from 'antd';
 import { OrderedListOutlined } from '@ant-design/icons';
@@ -52,7 +52,7 @@ interface SolutionsProps {
 	setDisplayedItem: (item) => void;
 }
 
-const SolutionView: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
+const SolutionView: FunctionComponent<SolutionsProps> = ({ item, setDisplayedItem }) => {
 	const [tabKey, setTabKey] = useState('1');
 
 	const tabList = item.codes.map(({ key, title }) => ({
@@ -120,4 +120,4 @@ const SolutionView: React.FC<SolutionsProps> = ({ item, setDisplayedItem }) => {
 	);
 };
 
-export default SolutionView;
+export default memo(SolutionView);

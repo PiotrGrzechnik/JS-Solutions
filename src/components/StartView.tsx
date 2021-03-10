@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent, memo } from 'react';
 import { Card } from 'antd';
 import styled from 'styled-components';
 import { menuSections } from 'src/data/sideMenu';
@@ -49,7 +49,7 @@ interface StartViewProps {
 	setListPath: (listPath: ListPath) => void;
 }
 
-const StartView: React.FC<StartViewProps> = ({ setListPath }) => {
+const StartView: FunctionComponent<StartViewProps> = ({ setListPath }) => {
 	return (
 		<Container>
 			{menuSections.map(({ category, icon, subcategories }) => (
@@ -76,4 +76,4 @@ const StartView: React.FC<StartViewProps> = ({ setListPath }) => {
 	);
 };
 
-export default StartView;
+export default memo(StartView);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FunctionComponent, memo, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Card, List, Typography } from 'antd';
 import { ListPath, Solution } from 'src/types';
@@ -27,7 +27,7 @@ interface SolutionsListProps {
 	setDisplayedItem: (item) => void;
 }
 
-const SolutionsList: React.FC<SolutionsListProps> = ({ listPath, setDisplayedItem }) => {
+const SolutionsList: FunctionComponent<SolutionsListProps> = ({ listPath, setDisplayedItem }) => {
 	const [list, setList] = useState<Solution[]>([]);
 
 	const subcategory = listPath[1];
@@ -54,4 +54,4 @@ const SolutionsList: React.FC<SolutionsListProps> = ({ listPath, setDisplayedIte
 	);
 };
 
-export default SolutionsList;
+export default memo(SolutionsList);

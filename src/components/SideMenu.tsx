@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent, memo } from 'react';
 import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 import { ListPath } from 'src/types';
@@ -22,7 +22,7 @@ interface SideMenuProps {
 	setListPath: (listPath) => void;
 }
 
-const SideMenu: React.FC<SideMenuProps> = ({ listPath, setListPath }) => {
+const SideMenu: FunctionComponent<SideMenuProps> = ({ listPath, setListPath }) => {
 	const onSubcategoryClick = (data) => {
 		const [subcategory, category] = data.keyPath;
 		const path: ListPath = [category, subcategory];
@@ -46,4 +46,4 @@ const SideMenu: React.FC<SideMenuProps> = ({ listPath, setListPath }) => {
 	);
 };
 
-export default SideMenu;
+export default memo(SideMenu);
