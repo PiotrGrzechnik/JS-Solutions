@@ -36,7 +36,7 @@ const CopyText = styled(Paragraph)`
 	position: absolute;
 	top: 6px;
 	right: 6px;
-	font-size: 18px;
+	font-size: 24px;
 
 	svg {
 		filter: drop-shadow(0px 0px 11px ${({ theme }) => theme.colors.primary});

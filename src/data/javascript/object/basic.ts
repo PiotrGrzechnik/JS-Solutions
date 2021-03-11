@@ -123,4 +123,53 @@ const result = getListOfObjects(list, listOfObjects, key)
 			},
 		],
 	},
+	{
+		category: Category.JAVASCRIPT,
+		subcategory: JSSubcategory.OBJECT,
+		title: 'Removes deeply all falsy values from an object or array.',
+		codes: [
+			{
+				key: '1',
+				title: '',
+				code: `
+const compactObject = (val) => {
+  const data = Array.isArray(val) ? val.filter(Boolean) : val
+  
+  return Object.keys(data).reduce(
+    (acc, key) => {
+      const value = data[key]
+      if (Boolean(value))
+        acc[key] = typeof value === 'object' ? compactObject(value) : value
+      return acc
+    },
+    Array.isArray(val) ? [] : {}
+  )
+}
+      `,
+				usage: `
+const obj = {
+  a: null,
+  b: false,
+  c: true,
+  d: 0,
+  e: 1,
+  f: '',
+  g: 'a',
+  h: [null, false, '', true, 1, 'a'],
+  i: { j: 0, k: false, l: 'a' }
+};
+
+compactObject(obj);
+
+// {
+//   c: true,
+//   e: 1,
+//   g: 'a',
+//   h: [ true, 1, 'a' ],
+//   i: { l: 'a' }
+// }
+      `,
+			},
+		],
+	},
 ];
