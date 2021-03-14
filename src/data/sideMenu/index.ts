@@ -1,20 +1,9 @@
-import React from 'react';
-import {
-	CodepenOutlined,
-	GlobalOutlined,
-	SecurityScanOutlined,
-	createFromIconfontCN,
-} from '@ant-design/icons';
 import { Category, JSSubcategory, ReactType, MenuSection } from 'src/types';
-
-const IconFont = createFromIconfontCN({
-	scriptUrl: ['//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js'],
-});
 
 export const menuSections: MenuSection[] = [
 	{
 		category: Category.JAVASCRIPT,
-		icon: <IconFont type="icon-javascript" />,
+		icon: 'lab la-js-square',
 		subcategories: [
 			JSSubcategory.ARRAY,
 			JSSubcategory.OBJECT,
@@ -26,17 +15,17 @@ export const menuSections: MenuSection[] = [
 	},
 	{
 		category: Category.REACT,
-		icon: <GlobalOutlined />,
+		icon: 'lab la-react',
 		subcategories: [ReactType.HOOKS],
 	},
 	{
 		category: Category.ALGORITHMS,
-		icon: <CodepenOutlined />,
+		icon: 'las la-project-diagram',
 		subcategories: [],
 	},
 	{
 		category: Category.TESTS,
-		icon: <SecurityScanOutlined />,
+		icon: 'las la-search-location',
 		subcategories: [],
 	},
 ];

@@ -5,6 +5,7 @@ export const basic: Solution[] = [
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.FUNCTION,
 		title: 'Pipe (function composition)',
+		icon: 'las la-equals',
 		codes: [
 			{
 				key: '1',

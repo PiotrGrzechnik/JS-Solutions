@@ -5,6 +5,7 @@ export const basic: Solution[] = [
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.ARRAY,
 		title: 'Remove duplicates from an array',
+		icon: 'las la-trash',
 		codes: [
 			{
 				key: '1',
@@ -63,6 +64,7 @@ removeDuplicatesFromArray(arr)
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.ARRAY,
 		title: 'Count element occurrences in an array',
+		icon: 'las la-calculator',
 		codes: [
 			{
 				key: '1',
@@ -84,6 +86,7 @@ countOccurrences(arr, 1)
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.ARRAY,
 		title: 'Split array to two arrays based on condition',
+		icon: 'las la-code-branch',
 		description: `
 ### Explanation:
 1. Take each item from array and invoke provided function with item as parameter

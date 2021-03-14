@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Card, List, Typography } from 'antd';
 import { ListPath, Solution } from 'src/types';
 import { capitalize, getSolutionsList } from 'src/utils';
+import Icon from './Icon';
 
 const { Title } = Typography;
 
@@ -12,7 +13,19 @@ const CardStyled = styled(Card)`
 const TitleStyled = styled(Title)`
 	text-align: center;
 `;
-const ListItem = styled(List.Item)``;
+const ListItem = styled(List.Item)`
+	padding: 6px 0;
+`;
+const ListItemMeta = styled(List.Item.Meta)`
+	h4 {
+		margin: 0;
+	}
+`;
+const IconStyled = styled(Icon)`
+	font-size: 22px;
+	color: ${({ theme }) => theme.colors.primaryDark};
+	margin-right: 12px;
+`;
 const ItemTitle = styled.div`
 	font-size: 16px;
 	cursor: pointer;
@@ -32,6 +45,7 @@ const SolutionsList: FunctionComponent<SolutionsListProps> = ({ listPath, setDis
 
 	const subcategory = listPath[1];
 	const title = capitalize(subcategory);
+	const defaultIcon = 'las la-check';
 
 	useEffect(() => {
 		getSolutionsList(listPath).then((data) => setList(data.solutions));
@@ -44,8 +58,13 @@ const SolutionsList: FunctionComponent<SolutionsListProps> = ({ listPath, setDis
 				dataSource={list}
 				renderItem={(item) => (
 					<ListItem>
-						<List.Item.Meta
-							title={<ItemTitle onClick={() => setDisplayedItem(item)}>{item.title}</ItemTitle>}
+						<ListItemMeta
+							title={
+								<ItemTitle onClick={() => setDisplayedItem(item)}>
+									<IconStyled name={item.icon ?? defaultIcon} />
+									{item.title}
+								</ItemTitle>
+							}
 						/>
 					</ListItem>
 				)}

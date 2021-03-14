@@ -3,6 +3,7 @@ import { Card } from 'antd';
 import styled from 'styled-components';
 import { menuSections } from 'src/data/sideMenu';
 import { ListPath } from 'src/types';
+import Icon from './Icon';
 
 const Container = styled.div`
 	display: flex;
@@ -16,9 +17,6 @@ const CardStyled = styled(Card)`
 const CardTitle = styled.div`
 	text-align: center;
 	color: ${({ theme }) => theme.colors.primary};
-`;
-const CardTitleText = styled.span`
-	margin-left: 8px;
 `;
 const CardBody = styled.div`
 	display: flex;
@@ -58,8 +56,8 @@ const StartView: FunctionComponent<StartViewProps> = ({ setListPath }) => {
 					bodyStyle={bodyStyle}
 					title={
 						<CardTitle>
-							<span>{icon}</span>
-							<CardTitleText>{category}</CardTitleText>
+							<Icon name={icon} />
+							<span>{category}</span>
 						</CardTitle>
 					}
 				>

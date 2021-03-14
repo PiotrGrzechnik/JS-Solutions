@@ -5,7 +5,7 @@ export const basic: Solution[] = [
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.STRING,
 		title: 'Capitalize string',
-		description: '',
+		icon: 'las la-text-height',
 		codes: [
 			{
 				key: '1',

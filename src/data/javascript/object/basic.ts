@@ -5,6 +5,7 @@ export const basic: Solution[] = [
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.OBJECT,
 		title: 'Copy of object',
+		icon: 'las la-copy',
 		codes: [
 			{
 				key: '1',
@@ -86,6 +87,7 @@ copiedObj.hello.word = 'excel'
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.OBJECT,
 		title: 'Get array of objects in order, based on property from another list',
+		icon: 'las la-stream',
 		codes: [
 			{
 				key: '1',
@@ -127,6 +129,7 @@ const result = getListOfObjects(list, listOfObjects, key)
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.OBJECT,
 		title: 'Removes deeply all falsy values from an object or array.',
+		icon: 'las la-trash',
 		codes: [
 			{
 				key: '1',
@@ -134,7 +137,7 @@ const result = getListOfObjects(list, listOfObjects, key)
 				code: `
 const compactObject = (val) => {
   const data = Array.isArray(val) ? val.filter(Boolean) : val
-  
+
   return Object.keys(data).reduce(
     (acc, key) => {
       const value = data[key]

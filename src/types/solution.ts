@@ -12,6 +12,7 @@ export interface Solution {
 	category: Category;
 	subcategory: Subcategory;
 	title: string;
+	icon?: string;
 	description?: string; // Markdown syntax
 	tags?: Subcategory[];
 	codes: SolutionCode[];

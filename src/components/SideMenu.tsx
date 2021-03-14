@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 import { ListPath } from 'src/types';
 import { menuSections } from 'src/data/sideMenu';
+import Icon from './Icon';
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
@@ -15,6 +16,9 @@ const MenuItemStyled = styled(Menu.Item)`
 	&:hover {
 		color: ${({ theme }) => theme.colors.primaryDark};
 	}
+`;
+const IconStyled = styled(Icon)`
+	font-size: 20px;
 `;
 
 interface SideMenuProps {
@@ -35,7 +39,7 @@ const SideMenu: FunctionComponent<SideMenuProps> = ({ listPath, setListPath }) =
 		<Sider width={200} className="site-layout-background">
 			<MenuStyled mode="inline" selectedKeys={selectedKeys} onClick={onSubcategoryClick}>
 				{menuSections.map(({ category, subcategories, icon }) => (
-					<SubMenu key={category} icon={icon} title={category}>
+					<SubMenu key={category} icon={<IconStyled name={icon} />} title={category}>
 						{subcategories.map((subcategory) => (
 							<MenuItemStyled key={subcategory}>{subcategory}</MenuItemStyled>
 						))}

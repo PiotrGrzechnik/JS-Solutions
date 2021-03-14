@@ -5,6 +5,7 @@ export const basic: Solution[] = [
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.NUMBER,
 		title: 'Get average value of arguments',
+		icon: 'las la-sort-numeric-up',
 		codes: [
 			{
 				key: '1',
