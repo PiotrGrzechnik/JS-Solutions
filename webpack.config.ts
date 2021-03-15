@@ -29,6 +29,18 @@ const webpackConfig = (env): Configuration => ({
 				test: /\.css$/i,
 				use: ['style-loader', 'css-loader'],
 			},
+			{
+				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'fonts/',
+						},
+					},
+				],
+			},
 		],
 	},
 	plugins: [
@@ -42,7 +54,7 @@ const webpackConfig = (env): Configuration => ({
 		}),
 		new ForkTsCheckerWebpackPlugin({
 			eslint: {
-				files: './src/**/*.{ts,tsx,js,jsx}', // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
+				files: './src/**/*.{ts,tsx,js,jsx}',
 			},
 		}),
 		new MomentLocalesPlugin(),

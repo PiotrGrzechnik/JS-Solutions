@@ -5,6 +5,7 @@ export const basic: Solution[] = [
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.BROWSER,
 		title: 'Get scroll position of the current page',
+		icon: 'las la-arrows-alt',
 		codes: [
 			{
 				key: '1',
@@ -29,6 +30,7 @@ getScrollPosition(element);
 		category: Category.JAVASCRIPT,
 		subcategory: JSSubcategory.BROWSER,
 		title: 'Intersection Observer - observe visibility change of an element in the viewport',
+		icon: 'las la-eye',
 		description: `
 ### Documentation:
 - [MDN IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)	
