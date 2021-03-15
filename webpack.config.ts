@@ -41,11 +41,20 @@ const webpackConfig = (env): Configuration => ({
 					},
 				],
 			},
+			{
+				test: /\.ico$|\.jpe?g$|\.gif$|\.png$|\.svg$/,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]',
+					outputPath: 'assets/',
+				},
+			},
 		],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './public/index.html',
+			favicon: './src/assets/favicon.png',
 		}),
 		new webpack.DefinePlugin({
 			'process.env.PRODUCTION': env.production || !env.development,
