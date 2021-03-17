@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo } from 'react';
+import React, { FunctionComponent, memo, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import { Layout, Menu } from 'antd';
 import { ListPath } from 'src/types';
@@ -27,13 +27,16 @@ interface SideMenuProps {
 }
 
 const SideMenu: FunctionComponent<SideMenuProps> = ({ listPath, setListPath }) => {
-	const onSubcategoryClick = (data) => {
-		const [subcategory, category] = data.keyPath;
-		const path: ListPath = [category, subcategory];
-		setListPath(path);
-	};
+	const onSubcategoryClick = useCallback(
+		(data) => {
+			const [subcategory, category] = data.keyPath;
+			const path: ListPath = [category, subcategory];
+			setListPath(path);
+		},
+		[setListPath],
+	);
 
-	const selectedKeys = listPath?.[1] ? [listPath?.[1]] : null;
+	const selectedKeys = useMemo(() => (listPath?.[1] ? [listPath?.[1]] : null), [listPath]);
 
 	return (
 		<Sider width={200} className="site-layout-background">

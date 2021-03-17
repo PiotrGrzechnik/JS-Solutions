@@ -47,31 +47,29 @@ interface StartViewProps {
 	setListPath: (listPath: ListPath) => void;
 }
 
-const StartView: FunctionComponent<StartViewProps> = ({ setListPath }) => {
-	return (
-		<Container>
-			{menuSections.map(({ category, icon, subcategories }) => (
-				<CardStyled
-					key={category}
-					bodyStyle={bodyStyle}
-					title={
-						<CardTitle>
-							<Icon name={icon} />
-							<span>{category}</span>
-						</CardTitle>
-					}
-				>
-					<CardBody>
-						{subcategories.map((subcategory) => (
-							<Subcategory key={subcategory} onClick={() => setListPath([category, subcategory])}>
-								{subcategory}
-							</Subcategory>
-						))}
-					</CardBody>
-				</CardStyled>
-			))}
-		</Container>
-	);
-};
+const StartView: FunctionComponent<StartViewProps> = ({ setListPath }) => (
+	<Container>
+		{menuSections.map(({ category, icon, subcategories }) => (
+			<CardStyled
+				key={category}
+				bodyStyle={bodyStyle}
+				title={
+					<CardTitle>
+						<Icon name={icon} />
+						<span>{category}</span>
+					</CardTitle>
+				}
+			>
+				<CardBody>
+					{subcategories.map((subcategory) => (
+						<Subcategory key={subcategory} onClick={() => setListPath([category, subcategory])}>
+							{subcategory}
+						</Subcategory>
+					))}
+				</CardBody>
+			</CardStyled>
+		))}
+	</Container>
+);
 
 export default memo(StartView);

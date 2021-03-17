@@ -1,4 +1,4 @@
-import React, { FunctionComponent, memo, useState } from 'react';
+import React, { FunctionComponent, memo, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { Button, Card, Typography, Tag } from 'antd';
 import { OrderedListOutlined } from '@ant-design/icons';
@@ -47,18 +47,24 @@ const customSyntaxStyle = {
 	filter: 'brightness(1.2)',
 };
 
+const DEFAULT_KEY = '1';
+
 interface SolutionsProps {
 	item: Solution;
 	setDisplayedItem: (item) => void;
 }
 
 const SolutionView: FunctionComponent<SolutionsProps> = ({ item, setDisplayedItem }) => {
-	const [tabKey, setTabKey] = useState('1');
+	const [tabKey, setTabKey] = useState(DEFAULT_KEY);
 
-	const tabList = item.codes.map(({ key, title }) => ({
-		key,
-		tab: title ?? `method ${key}`,
-	}));
+	const tabList = useMemo(
+		() =>
+			item.codes.map(({ key, title }) => ({
+				key,
+				tab: title ?? `method ${key}`,
+			})),
+		[item.codes],
+	);
 
 	const renderCode = item.codes.find((element) => element.key === tabKey);
 

@@ -35,6 +35,8 @@ const ItemTitle = styled.div`
 	}
 `;
 
+const DEFAULT_ICON = 'las la-check';
+
 interface SolutionsListProps {
 	listPath: ListPath;
 	setDisplayedItem: (item) => void;
@@ -45,7 +47,6 @@ const SolutionsList: FunctionComponent<SolutionsListProps> = ({ listPath, setDis
 
 	const subcategory = listPath[1];
 	const title = capitalize(subcategory);
-	const defaultIcon = 'las la-check';
 
 	useEffect(() => {
 		getSolutionsList(listPath).then((data) => setList(data.solutions));
@@ -61,7 +62,7 @@ const SolutionsList: FunctionComponent<SolutionsListProps> = ({ listPath, setDis
 						<ListItemMeta
 							title={
 								<ItemTitle onClick={() => setDisplayedItem(item)}>
-									<IconStyled name={item.icon ?? defaultIcon} />
+									<IconStyled name={item.icon ?? DEFAULT_ICON} />
 									{item.title}
 								</ItemTitle>
 							}
