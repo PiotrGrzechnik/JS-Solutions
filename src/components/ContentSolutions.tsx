@@ -25,7 +25,7 @@ const ContentSolutions: FunctionComponent<ContentSolutionsProps> = ({ listPath }
 
 	useEffect(() => {
 		setDisplayedItem(null);
-	}, []);
+	}, [listPath]);
 
 	return (
 		<ContentStyled className="site-layout-background">
