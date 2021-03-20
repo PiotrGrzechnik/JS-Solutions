@@ -43,4 +43,32 @@ fn(1);
 			},
 		],
 	},
+	{
+		category: Category.JAVASCRIPT,
+		subcategory: JSSubcategory.FUNCTION,
+		title: 'Debounce',
+		icon: 'las la-sync',
+		codes: [
+			{
+				key: '1',
+				code: `
+const debounce = (callback, milliseconds) => {
+	let timeout
+
+	return (argument) => {
+		clearTimeout(timeout)
+		timeout = setTimeout(() => callback(argument), milliseconds)
+	}
+}
+`,
+				usage: `
+const debouncedFn = debounce(Fn, 500)
+`,
+			},
+		],
+		description: `
+Debouncing enforces that a function not be called again until a certain amount of time has passed without it being called.  
+For example, “execute this function only if 500 milliseconds have passed without it being called.
+`,
+	},
 ];

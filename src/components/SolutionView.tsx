@@ -46,6 +46,10 @@ const customSyntaxStyle = {
 	padding: '0 32px',
 	filter: 'brightness(1.2)',
 };
+const ReactMarkdownStyled = styled(ReactMarkdown)`
+	font-size: 1rem;
+	margin-top: 16px;
+`;
 
 const DEFAULT_KEY = '1';
 
@@ -120,7 +124,7 @@ const SolutionView: FunctionComponent<SolutionsProps> = ({ item, setDisplayedIte
 					/>
 				</CodeContainer>
 
-				<ReactMarkdown>{item?.description}</ReactMarkdown>
+				<ReactMarkdownStyled>{item?.description}</ReactMarkdownStyled>
 			</CardStyled>
 		</Container>
 	);

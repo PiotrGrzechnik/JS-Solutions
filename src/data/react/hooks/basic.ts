@@ -102,4 +102,46 @@ const { posX, posY } = useMousePosition()
 			},
 		],
 	},
+	{
+		category: Category.REACT,
+		subcategory: ReactType.HOOKS,
+		title: 'Window size hook',
+		icon: 'las la-expand-arrows-alt',
+		codes: [
+			{
+				key: '1',
+				code: `
+const useWindowSize = () => {
+	const [windowSize, setWindowSize] = useState({
+		width: undefined,
+		height: undefined,
+	})
+
+	useEffect(() => {
+		function handleResize() {
+			setWindowSize({
+				width: window.innerWidth,
+				height: window.innerHeight,
+			})
+		}
+		
+		window.addEventListener("resize", handleResize)
+		
+		handleResize()
+		
+		return () => window.removeEventListener("resize", handleResize)
+	}, [])
+
+	return windowSize
+}
+      `,
+				usage: `
+// In component:
+
+const size = useWindowSize()
+
+      `,
+			},
+		],
+	},
 ];
